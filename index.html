@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Simple Chatbox</title>
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+        />
+        <link
+            rel="stylesheet"
+            href="https://fonts.googleapis.com/icon?family=Material+Icons"
+        />
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+        <div class="navbar-fixed">
+            <nav class="blue darken-3 z-depth-2">
+                <div class="container">
+                    <div class="nav-wrapper">
+                        <a href="#" class="brand-logo">SimpleChatbox</a>
+                        <a
+                            href="#"
+                            data-target="mobile-demo"
+                            class="sidenav-trigger"
+                            style="display: none"
+                        >
+                            <i class="material-icons"> menu </i>
+                        </a>
+                        <a
+                            href="#"
+                            data-target="profile"
+                            class="sidenav-trigger"
+                            style="display: none"
+                        >
+                            <i class="material-icons">
+                                sentiment_satisfied_alt
+                            </i>
+                        </a>
+                        <ul class="right hide-on-med-and-down">
+                            <li>
+                                <a
+                                    class="modal-trigger signup-btn"
+                                    href="#signup-modal"
+                                    style="display: none"
+                                >
+                                    Sign Up
+                                </a>
+                            </li>
+                            <li>
+                                <a
+                                    class="modal-trigger login-btn"
+                                    href="#signin-modal"
+                                    style="display: none"
+                                >
+                                    Login
+                                </a>
+                            </li>
+                            <li>
+                                <a
+                                    class="account-btn"
+                                    href="#"
+                                    style="display: none"
+                                >
+                                    Account
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
+        <div class="chatbox">
+            <div class="container"></div>
+        </div>
+        <div class="send" style="display: none">
+            <div class="send-mess blue lighten-5 z-depth-2">
+                <div class="container">
+                    <div class="row">
+                        <form id="input-mess" autocomplete="off">
+                            <div class="col m11 s10 input-field">
+                                <input type="text" name="" id="mess-content" />
+                                <label for="mess-content">Message</label>
+                            </div>
+                            <div class="col m1 s1">
+                                <button id="send-btn" class="btn">
+                                    <i class="material-icons">send</i>
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Sign up form -->
+        <div class="modal" id="signup-modal">
+            <div class="modal-content">
+                <form id="signup-form">
+                    <div class="input-field">
+                        <input type="text" name="" id="su-name" required />
+                        <label for="su-name">Name</label>
+                    </div>
+                    <div class="input-field">
+                        <input type="email" name="" id="su-email" required />
+                        <label for="su-email">Email</label>
+                    </div>
+                    <div class="input-field">
+                        <input
+                            type="password"
+                            name=""
+                            id="su-password"
+                            required
+                        />
+                        <label for="su-password">Password</label>
+                    </div>
+                    <button id="signup-btn" class="btn">Sign Up</button>
+                    <p class="error pink-text center-align"></p>
+                </form>
+            </div>
+        </div>
+        <!-- Sign in form  -->
+        <div class="modal" id="signin-modal">
+            <div class="modal-content">
+                <form id="signin-form">
+                    <div class="input-field">
+                        <input type="text" name="" id="email" required />
+                        <label for="email">Email</label>
+                    </div>
+                    <div class="input-field">
+                        <input type="password" name="" id="password" required />
+                        <label for="password">Password</label>
+                    </div>
+                    <button id="signin-btn" class="btn">Sign in</button>
+                    <p class="error pink-text center-align"></p>
+                </form>
+            </div>
+        </div>
+
+        <!-- sidenav -->
+        <ul class="sidenav" id="mobile-demo">
+            <li><a href="#" id="">Login</a></li>
+            <li><a href="#" id="">Sign Up</a></li>
+        </ul>
+        <!-- account sidenav -->
+        <ul id="profile" class="sidenav">
+            <li>
+                <div class="user-view">
+                    <div class="background">
+                        <img src="" />
+                    </div>
+                    <div class="file-field1 input-field">
+                        <div class="">
+                            <a href="#user">
+                                <img
+                                    class="circle"
+                                    id="avatar-profile"
+                                    src=""
+                                />
+                            </a>
+                            <input type="file" />
+                        </div>
+                    </div>
+
+                    <a href="#name">
+                        <span id="name-profile" class="blue-text name"></span>
+                    </a>
+
+                    <a href="#email">
+                        <span id="email-profile" class="blue-text email">
+                        </span>
+                    </a>
+                </div>
+            </li>
+            <!-- <li>
+                <a href="#!">
+                    <i class="material-icons"> cloud </i> First Link With Icon
+                </a>
+            </li> -->
+            <!-- <li><a href="#!"> Second Link</a></li> -->
+            <li><div class="divider"></div></li>
+            <!-- <li><a class="subheader"> Subheader </a></li> -->
+            <li>
+                <a class="waves-effect" href="#" id="logout-btn"> Logout </a>
+            </li>
+        </ul>
+        <script
+            src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"
+            integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg=="
+            crossorigin="anonymous"
+        ></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.19.0/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.19.0/firebase-auth.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.19.0/firebase-firestore.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-storage.js"></script>
+        <script src="scripts/auth.js"></script>
+        <script src="scripts/index.js"></script>
+    </body>
+</html>

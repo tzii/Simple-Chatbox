@@ -1,0 +1,58 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.chatbox {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.send {
+    height: 70px;
+}
+.responsive-img-cus {
+    height: auto;
+    max-width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+.send-mess {
+    height: 70px;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+}
+.mess-content {
+    padding: 10px;
+    display: inline-block;
+    border-radius: 10px;
+}
+.file-field1 {
+    position: relative;
+}
+.file-field1 input[type="file"] {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    padding-top: 0px;
+    padding-right: 0px;
+    padding-bottom: 0px;
+    padding-left: 0px;
+    font-size: 20px;
+    cursor: pointer;
+    opacity: 0;
+}
+button#send-btn {
+    margin-top: 15px;
+}
+@media only screen and (min-width: 993px) {
+    nav a.sidenav-trigger {
+        display: none !important;
+    }
+}
